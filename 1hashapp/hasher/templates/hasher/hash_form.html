@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashear Palabras</title>
+</head>
+<body>
+    <h2>Hashear una palabra</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Hashear</button>
+    </form>
+
+    {% if hash_result %}
+        <h3>Resultado:</h3>
+        <p><strong>Hash:</strong> {{ hash_result }}</p>
+    {% endif %}
+</body>
+</html>

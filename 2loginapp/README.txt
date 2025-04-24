@@ -12,6 +12,8 @@ Para correr el programa:
 - Ingresar a la app (http://127.0.0.1:8000/accounts/login)
 - Crear una nueva cuenta (por la opcion de ¿No tienes cuenta? Regístrate)
 - Despues de crear la cuenta hacer login
+- Si desea usar un usuario ya  creado puede usar el siguiente: usuario felipe3, contraseña: Barco9503*
+
 PAra verificar correcto guardado del usuario y encriptado de la contraseña:
 - Crear un super usuario (python manage.py createsuperuser)
 - un usuario y contraseña posible es felipe33 (ambas)

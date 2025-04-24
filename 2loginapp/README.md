@@ -49,6 +49,7 @@
 
 7. Crear una nueva cuenta (en el enlace **¿No tienes cuenta? Regístrate**).
 8. Después de crear la cuenta, hacer login.
+9. Si desea usar un usuario ya  creado puede usar el siguiente: usuario felipe3, contraseña: Barco9503*
 
 ---
 
