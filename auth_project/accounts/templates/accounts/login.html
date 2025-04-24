@@ -1,0 +1,24 @@
+<!-- filepath: c:\Users\nbarco\Documents\Estudio\Seguridad en el desarrollo\ejercicio 2 autenticacion\auth_project\accounts\templates\accounts\login.html -->
+{% extends "accounts/base.html" %}
+{% block title %}Iniciar sesión{% endblock %}
+{% block content %}
+  <h2>Iniciar sesión</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+  </form>
+
+  <!-- Incluye el script de reCAPTCHA de Google -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <p class="mt-2">
+    <a href="{% url 'register' %}">¿No tienes cuenta? Regístrate</a>
+  </p>
+
+  {% if form.captcha.errors %}
+  <div class="alert alert-danger">
+    {{ form.captcha.errors }}
+  </div>
+  {% endif %}
+{% endblock %}

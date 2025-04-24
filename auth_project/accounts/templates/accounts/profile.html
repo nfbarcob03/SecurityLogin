@@ -1,0 +1,12 @@
+{% extends "accounts/base.html" %}
+{% block title %}Perfil{% endblock %}
+{% block content %}
+  <h2>Bienvenido, {{ user.username }}</h2>
+  <p>Email: {{ user.email }}</p>
+  <p>Fecha de registro: {{ user.date_joined|date:"d/m/Y H:i" }}</p>
+
+  <form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-outline-danger mt-3">Cerrar sesión</button>
+</form>
+{% endblock %}
