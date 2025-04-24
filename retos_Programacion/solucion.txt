@@ -1,0 +1,56 @@
+- reto_1.bat:
+Contraseña en plano "coding for fun"
+
+- reto_2.bat:
+ se define la cadena set abc=qazxswedcvfrtgbnhyujmkiolp
+
+Posiciones:
+ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+ q  a  z  x  s  w  e  d  c  v  f  r  t  g  b  n  h  y  u  j  m  k  i  o  l  p
+
+Se construye set var=%abc:~14,1%%abc:~-25,1%%abc:~12,1%%abc:~8,1%%abc:~16,1%%abc:~8,1%%abc:~23,1%%abc:~7,1%
+
+~14,1 → posición 14 = b
+
+~-25,1 → -25 desde el final = posición 1 = a
+
+~12,1 → posición 12 = t
+
+~8,1 → posición 8 = c
+
+~16,1 → posición 16 = h
+
+~8,1 otra vez = c
+
+~23,1 → posición 23 = l
+
+~7,1 → posición 7 = d
+
+Entonces:
+
+var = b a t c h c l d
+→ batchcld
+
+
+Se construye set var2=%var%%abc:~-2,1%%abc:~23,1%%abc:~13,1%
+~ -2,1 → posición 24 = l
+
+~23,1 → posición 23 = l
+
+~13,1 → posición 13 = g
+
+→ var2 = batchcld + l + l + g = batchcldllg
+
+
+Se reemplaza set var2=%var2:a=4%
+→ Reemplaza a por 4: b4tchcldllg
+
+bat
+Copiar
+Editar
+set var3=%var2:o=0%
+→ No hay letras o, así que no cambia nada:
+var3 = b4tchcldllg
+
+Contraseña final esperada:
+b4tchcldllg
