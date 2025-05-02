@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Seguro</title></head>
+<body>
+  <h1>Consulta Segura</h1>
+  <form method="post">{% csrf_token %}
+    <input type="text" name="user_id" placeholder="Ingrese ID de usuario">
+    <button type="submit">Consultar</button>
+  </form>
+  {% if result %}
+    <p>Resultado: {{ result.0 }} {{ result.1 }}</p>
+  {% endif %}
+  <a href="/">Volver</a>
+</body>
+</html>
